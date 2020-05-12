@@ -1,0 +1,21 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+django = "*"
+pillow = "*"
+whitenoise = "*"
+django-heroku = "*"
+psycopg2-binary = "*"
+africastalking = "*"
+cloudinary = "*"
+boto3 = "*"
+gunicorn = "*"
+dj-database-url = "*"
+
+[requires]
+python_version = "3.7"
