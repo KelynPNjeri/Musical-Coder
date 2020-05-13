@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import cloudinary
 import dj_database_url
 import django_heroku
 
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'storages',
+    'cloudinary',
     'blog',
 ]
 
@@ -106,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Nairobi'
 
 USE_I18N = True
 
@@ -116,6 +118,12 @@ USE_TZ = True
 
 
 django_heroku.settings(locals())
+cloudinary.config(
+  cloud_name = os.environ['CLOUDINARY_NAME'],
+  api_key = os.environ['CLOUDINARY_API_KEY'],
+  api_secret = os.environ['CLOUDINARY_API_SECRET_KEY'],
+  secure = True
+)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
